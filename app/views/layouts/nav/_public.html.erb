@@ -6,8 +6,11 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+          <% if account_signed_in? %>
+          <% else %>
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          <% end %>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Latest</a>
@@ -29,12 +32,18 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Advertising</a>
         </li>
+        <% if account_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Log out", destroy_account_session_path, method: :delete, class: "nav-link" %>
+        </li>
+        <% else %>
         <li class="nav-item">
           <%= link_to "Log In", new_account_session_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Sign up", new_account_registration_path, class: "nav-link" %>
         </li>
+        <% end %>
       </ul>
 
     </div>
