@@ -9,6 +9,20 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "bootstrap"
 
+var jQuery = require("jquery")
+global.$ = global.jQuery = jQuery
+window.$ = window.jQuery = jQuery
+
+require("bootstrap")
+
+import toastr from 'toastr';
+toastr.options = {
+  progressBar: true
+}
+global.toastr = toastr;
+
+require("./includes/properties");
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

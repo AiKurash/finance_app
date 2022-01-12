@@ -29,6 +29,12 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise'
 
+#image uploads to Amazon S3
+gem 'carrierwave', "0.10.0"
+gem 'fog', '~> 1.37.0'
+
+gem 'mini_magick'
+
 group :development, :test do
   gem 'sqlite3', '1.4.2'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -44,6 +50,8 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+
 end
 
 group :test do
