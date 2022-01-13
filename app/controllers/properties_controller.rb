@@ -62,6 +62,10 @@ class PropertiesController < ApplicationController
     end
   end
 
+  def email_agent
+
+  end 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_property
@@ -74,6 +78,7 @@ class PropertiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def property_params
-      params.require(:property).permit(:name, :address, :price, :rooms, :bathrooms, :parking_spaces, :details, :photo, :photo_cache)
+      params.require(:property).permit(:name, :address, :price, :rooms, :bathrooms, :parking_spaces, :for_sale,
+        :available_date, :details, :photo, :photo_cache)
     end
 end
